@@ -44,11 +44,14 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 //////////////////header/////////////////////////
 
 const links = document.querySelectorAll('header a');
-
+links.forEach(link => {
+  link.style.color = 'green';
+})
 for(let i = 0; i <= links.length -1; i++){
   links[i].textContent = siteContent['nav'][`nav-item-${i+1}`]
 }
 
+// links.style.color= 'green';
 
 // hero////////////////////////////////////////
 
@@ -117,3 +120,18 @@ contactEmail.textContent = siteContent['contact']['email']
 
 const footer = document.querySelector('footer p');
 footer.textContent = siteContent['footer']['copyright'];
+
+
+
+///task 3//////////////////////////////////////
+const nav = document.querySelector('header nav');
+
+const newLink1 = document.createElement('a');
+newLink1.textContent = 'Hello';
+newLink1.style.color = 'green';
+nav.prepend(newLink1);
+
+const newLink2= document.createElement('a');
+newLink2.textContent = 'GoodBye';
+newLink2.style.color = 'green';
+nav.append(newLink2);
